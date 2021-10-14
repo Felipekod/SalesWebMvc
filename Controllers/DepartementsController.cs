@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using SalesWebMvc.Models;
 using SalesWevMvc.Models;
 
@@ -46,7 +47,11 @@ namespace SalesWebMvc.Controllers
         // GET: Departements/Create
         public IActionResult Create()
         {
-            return View();
+            //using (MySqlConnection connection = new MySqlConnection("server=localhost;user=root;database=bancotest;port=3306;password=Urdxul46@"))
+            //{
+            //    MySqlCommand cmd = new MySqlCommand();
+            //}
+                return View();
         }
 
         // POST: Departements/Create

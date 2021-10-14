@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SalesWevMvc.Models;
+using MySql;
 
 namespace SalesWebMvc
 {
@@ -26,9 +27,10 @@ namespace SalesWebMvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            string mySqlConnectionStr = Configuration.GetConnectionString("SalesMvcContext");
             services.AddDbContext<SalesMvcContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("SalesMvcContext")));
+                    options.UseMySql(mySqlConnectionStr,ServerVersion.AutoDetect(mySqlConnectionStr)));
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
