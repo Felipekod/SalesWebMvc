@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SalesWevMvc.Models;
 using MySql;
+using SalesWebMvc.Data;
 
 namespace SalesWebMvc
 {
@@ -31,6 +32,8 @@ namespace SalesWebMvc
             services.AddDbContext<SalesMvcContext>(options =>
                     options.UseMySql(mySqlConnectionStr,ServerVersion.AutoDetect(mySqlConnectionStr)));
             services.AddControllers();
+
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

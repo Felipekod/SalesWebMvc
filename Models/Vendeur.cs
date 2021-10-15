@@ -13,7 +13,7 @@ namespace SalesWebMvc.Models
         public DateTime DateNaissance { get; set; }
         public double SalaireBase { get; set; }
         public Departement Departament { get; set; }
-        public ICollection<EnregistrementVentes> Ventes { get; set; } = new List<EnregistrementVentes>();
+        public ICollection<EnregistrementVentes> ventes { get; set; } = new List<EnregistrementVentes>();
 
         public Vendeur()
         {
@@ -31,17 +31,17 @@ namespace SalesWebMvc.Models
 
         public void addVentes(EnregistrementVentes ev)
         {
-            Ventes.Add(ev);
+            ventes.Add(ev);
         }
 
         public void removeVente(EnregistrementVentes ev)
         {
-            Ventes.Remove(ev);
+            ventes.Remove(ev);
         }
 
         public double ventesTotale(DateTime debut, DateTime fin)
         {
-            return Ventes.Where(ev => ev.Date >= debut && ev.Date <= fin).Sum(ev => ev.Valeur);
+            return ventes.Where(ev => ev.Date >= debut && ev.Date <= fin).Sum(ev => ev.Valeur);
         }
     }
 }

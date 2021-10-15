@@ -20,10 +20,12 @@
     <None Remove="dbup-add-migration" />
     <None Remove="FluentMigrator.Runner.MySql" />
     <None Remove="Models\Enums\" />
+    <None Remove="Views\Vendeurs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Models\Enums\" />
+    <Folder Include="Views\Vendeurs\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
