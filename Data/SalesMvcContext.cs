@@ -29,7 +29,6 @@ namespace SalesWebMvc.Models
                 entity.Property(e => e.Id).HasColumnName("Id");
 
                 entity.Property(e => e.Nom).HasMaxLength(50).HasColumnName("Nom");
-
             });
 
             modelBuilder.Entity<Vendeur>(entity =>
@@ -49,9 +48,8 @@ namespace SalesWebMvc.Models
                 entity.Property(e => e.SalaireBase).HasColumnName("SalaireBase");
 
                 entity.HasOne(d => d.Departament)
-                    .WithMany(p => p.Vendeurs)
-                    .HasForeignKey(d => d.Id);
-
+                    .WithMany(v => v.Vendeurs)
+                    .HasForeignKey(f => f.DepartementId);
             });
         }
     }
