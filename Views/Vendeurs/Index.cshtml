@@ -1,6 +1,51 @@
-﻿
+﻿@model IEnumerable<SalesWebMvc.Models.Vendeur>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Vendeurs";
 }
 
-<h2>Index</h2>
+<h2>@ViewData["Title"]</h2>
+
+<table classe="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomComplet);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateNaissance);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaireBase);
+            </th>
+            <th>
+                Departement
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomComplet);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateNaissance);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalaireBase);
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departament.Nom);
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>

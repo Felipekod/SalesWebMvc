@@ -9,9 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using SalesWevMvc.Models;
+using SalesWebMvc.Models;
 using MySql;
 using SalesWebMvc.Data;
+using SalesWebMvc.Services;
 
 namespace SalesWebMvc
 {
@@ -34,6 +35,7 @@ namespace SalesWebMvc
             services.AddControllers();
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<VendeurService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

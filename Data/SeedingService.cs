@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using SalesWebMvc.Models;
-using SalesWevMvc.Models;
 
 namespace SalesWebMvc.Data
 {

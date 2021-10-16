@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 using SalesWebMvc.Models;
-using SalesWevMvc.Models;
 
 namespace SalesWebMvc.Controllers
 {

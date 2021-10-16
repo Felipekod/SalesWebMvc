@@ -21,11 +21,13 @@
     <None Remove="FluentMigrator.Runner.MySql" />
     <None Remove="Models\Enums\" />
     <None Remove="Views\Vendeurs\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Models\Enums\" />
     <Folder Include="Views\Vendeurs\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
