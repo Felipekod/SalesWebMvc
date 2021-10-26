@@ -5,21 +5,24 @@
 }
 
 <h2>@ViewData["Title"]</h2>
+<p>
+    <a asp-action="Create" class="btn btn-default"> Créer Vendeur </a>
+</p>
 
-<table classe="table table-striped table-hover">
+<table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NomComplet);
+                @Html.DisplayNameFor(model => model.NomComplet)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email);
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateNaissance);
+                @Html.DisplayNameFor(model => model.DateNaissance)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SalaireBase);
+                @Html.DisplayNameFor(model => model.SalaireBase)
             </th>
             <th>
                 Departement
@@ -31,19 +34,19 @@
             {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NomComplet);
+                @Html.DisplayFor(modelItem => item.NomComplet)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email);
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateNaissance);
+                @Html.DisplayFor(modelItem => item.DateNaissance)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SalaireBase);
+                @Html.DisplayFor(modelItem => item.SalaireBase)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Departament.Nom);
+                @Html.DisplayFor(modelItem => item.Departament.Nom)
             </td>
         </tr>
             }

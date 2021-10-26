@@ -49,8 +49,8 @@ namespace SalesWebMvc.Models
                 entity.Property(e => e.SalaireBase).HasColumnName("SalaireBase");
 
                 entity.HasOne(d => d.Departament)
-                    .WithMany(p => p.Vendeurs)
-                    .HasForeignKey(d => d.Id);
+                    .WithMany(v => v.Vendeurs)
+                    .HasForeignKey(f => f.DepartementId);
 
             });
         }
