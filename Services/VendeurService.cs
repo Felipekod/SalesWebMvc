@@ -26,5 +26,11 @@ namespace SalesWebMvc.Services
                 .Include(e => e.Departament)
                 .ToList();
         }
+
+        public void Insert(Vendeur obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }
