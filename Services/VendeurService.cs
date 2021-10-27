@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Models;
 using SalesWebMvc.Services.Exceptions;
@@ -20,45 +21,46 @@ namespace SalesWebMvc.Services
             _context = context;
         }
 
-        public List<Vendeur> FindAll()
+        public async Task<List<Vendeur>> FindAllAsync()
         {
-            return _context
+            return await _context
                 .Vendeur
                 .Include(e => e.Departament)
-                .ToList();
+                .ToListAsync();
         }
 
-        public void Insert(Vendeur obj)
+        public async Task InsertAsync(Vendeur obj)
         {
             _context.Add(obj);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public Vendeur FindById(int id)
+        public async Task<Vendeur> FindByIdAsync(int id)
         {
-            return _context
+            return await _context
                 .Vendeur
                 .Include(e => e.Departament)
-                .FirstOrDefault(obj => obj.Id == id);
+                .FirstOrDefaultAsync(obj => obj.Id == id);
         }
 
-        public void Remove(int id)
+        public async Task RemoveAsync(int id)
         {
-            var obj = _context.Vendeur.Find(id);
+            var obj = await _context.Vendeur.FindAsync(id);
             _context.Vendeur.Remove(obj);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Vendeur obj)
+        public async Task UpdateAsync(Vendeur obj)
         {
-            if(!_context.Vendeur.Any(x => x.Id == obj.Id))
+            bool hasAny = await _context.Vendeur.AnyAsync(x => x.Id == obj.Id);
+            if (!hasAny)
             {
                 throw new NotFoundException("Id not found");
             }
             try
             {
                 _context.Update(obj);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException e)
             {
