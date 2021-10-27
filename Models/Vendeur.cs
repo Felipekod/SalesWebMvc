@@ -9,9 +9,14 @@ namespace SalesWebMvc.Models
     public class Vendeur
     {
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(60, MinimumLength = 4, ErrorMessage = "Le nom complet doit comptenir au moins 4 caractères ")]
+        [Display(Name = "Nom complet")]
         public string NomComplet { get; set; }
 
         [DataType(DataType.EmailAddress)]
+        [Required]
         public string Email { get; set; }
 
         [Display(Name = "Date de naissance")]
@@ -20,6 +25,7 @@ namespace SalesWebMvc.Models
 
         [Display(Name = "Salaire heure")]
         [DisplayFormat(DataFormatString = "{0:f2}")]
+        [Required]
         public double SalaireBase { get; set; }
         public Departement Departament { get; set; }
         public int DepartementId { get; set; }
