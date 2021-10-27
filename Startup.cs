@@ -40,6 +40,8 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<VendeurService>();
             services.AddScoped<DepartementService>();
+            services.AddScoped<EnregistrementVentesService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
