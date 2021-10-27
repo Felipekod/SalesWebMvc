@@ -23,6 +23,7 @@
     <None Remove="Views\Vendeurs\" />
     <None Remove="Services\" />
     <None Remove="Services\Exceptions\" />
+    <None Remove="Views\EnregistrementVentes\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
@@ -30,6 +31,7 @@
     <Folder Include="Views\Vendeurs\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Exceptions\" />
+    <Folder Include="Views\EnregistrementVentes\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
