@@ -50,6 +50,8 @@ namespace SalesWebMvc.Models
                 entity.HasOne(d => d.Departament)
                     .WithMany(v => v.Vendeurs)
                     .HasForeignKey(f => f.DepartementId);
+
+                
             });
         }
     }

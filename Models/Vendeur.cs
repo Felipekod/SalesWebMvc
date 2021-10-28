@@ -29,7 +29,7 @@ namespace SalesWebMvc.Models
         public double SalaireBase { get; set; }
         public Departement Departament { get; set; }
         public int DepartementId { get; set; }
-        public ICollection<EnregistrementVentes> ventes { get; set; } = new List<EnregistrementVentes>();
+        public virtual ICollection<EnregistrementVentes> ventes { get; set; } = new List<EnregistrementVentes>();
 
         public Vendeur()
         {
